@@ -1,0 +1,65 @@
+.topSegment {
+    text-align: center;
+    border: solid rgb(255, 170, 40);
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+.middleSegment {
+    text-align: center;
+    background-color: #FFF;
+    color:#09123c;
+    font-size: 2vw;
+    font-family: Georgia, serif;
+    font-weight: bold;
+}
+.bottomSegment {
+    background-color: rgb(255, 170, 40);
+    margin-right: -2px;
+    border: 1px groove #09123c;
+}
+.totalSegment {
+    text-align: center;
+    background-color: #09123c;
+    color:#09123c;
+}
+
+
+.orienteeringPhoto{
+    opacity: 0.5;
+    border-radius: 10px;
+}
+.imageText {
+    font: "Roboto", Arial, sans-serif;
+    color: #FFF;
+    font-size: 7vw;
+}
+.dropdown {
+    border: 0px;
+    color:#09123c;
+    font-family: 'Lato';font-size: 22px;
+}
+.startButton {
+    background-color: rgb(255, 170, 40);
+    color:#09123c;
+    color:#09123c;
+    font-size: 4vw;
+    font-family: Georgia, serif;
+    color: #09123c;
+    font-size: 3vw;
+}
+.clock {
+    color:#09123c;
+    font-family: 'Lato';font-size: 22px;
+}
+.score {
+    font-family: 'Lato'; font-size: 22px;
+}
+.nameButtons {
+    font-weight: bold;
+    border: 1px outset black;
+    font-family: "Times New Roman", Times, serif;
+    color:#09123c;
+}
+.imageButtons {
+    border: 2px outset black;
+}
