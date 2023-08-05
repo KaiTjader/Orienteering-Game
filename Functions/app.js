@@ -5,27 +5,33 @@ function setUp(){
     //localStorage.setItem("setBestTimes", "temp"); //restart game
     if(localStorage.getItem("setBestTimes") != "The times are set"){
         localStorage.setItem("setBestTimes", "The times are set");
-        localStorage.setItem("1", "9:99.99");
-        localStorage.setItem("5", "9:99.99");
-        localStorage.setItem("15", "9:99.99");
-        localStorage.setItem("30", "9:99.99");
-        localStorage.setItem("44", "9:99.99");
+        localStorage.setItem("1", "99:99.99");
+        localStorage.setItem("5", "99:99.99");
+        localStorage.setItem("15", "99:99.99");
+        localStorage.setItem("30", "99:99.99");
+        localStorage.setItem("44", "99:99.99");
         beginningDisplay = document.getElementById("beginningScore");
         p = makeP(beginningDisplay);
         p.textContent = "Good Luck & I Hope You Enjoy";
         console.log("Rest Local Storage");
     }else{
         let beginningScoreBoard = document.getElementById("beginningScore");
-        p1 = makeP(beginningScoreBoard);
-        p5 = makeP(beginningScoreBoard);
-        p15 = makeP(beginningScoreBoard);
-        p30 = makeP(beginningScoreBoard);
-        p44 = makeP(beginningScoreBoard);
-        p1.textContent = "1 Button: " + localStorage.getItem("1");
-        p5.textContent = "5 Button: " + localStorage.getItem("5");
-        p15.textContent = "15 Button: " + localStorage.getItem("15");
-        p30.textContent = "30 Button: " + localStorage.getItem("30");
-        p44.textContent = "44 Button: " + localStorage.getItem("44");
+        setPtext(makeP(beginningScoreBoard),"1");
+        setPtext(makeP(beginningScoreBoard),"5");
+        setPtext(makeP(beginningScoreBoard),"15");
+        setPtext(makeP(beginningScoreBoard),"30");
+        setPtext(makeP(beginningScoreBoard),"44");
+    }
+}
+function setPtext(p,num){
+    let plural = 's: ';
+    if(num == 1){
+        plural = ': ';
+    }
+    if(localStorage.getItem(num) == "99:99.99"){
+        p.textContent = num + " Button" + plural + "N/A";
+    }else{
+        p.textContent = num + " Button" + plural + localStorage.getItem(num);
     }
 }
 function makeP(parent){
@@ -106,7 +112,7 @@ function makeButton(buttonType, index){
 // If the button gets clicked
 function modifyButton(greyType, buttonName, buttonId){
     if(greyType == null){
-        buttonName.style.backgroundColor = "lightgrey";
+        buttonName.style.backgroundColor = "rgb(169,169,169)";
         return buttonId;
     }else if(greyType == buttonId){
         buttonName.style.backgroundColor = "white";
@@ -114,7 +120,7 @@ function modifyButton(greyType, buttonName, buttonId){
     }else if(greyType != null && greyType != buttonId){
         let currentButton = document.getElementById(greyType);
         currentButton.style.backgroundColor = "white";
-        buttonName.style.backgroundColor = "lightgrey";
+        buttonName.style.backgroundColor = "rgb(169,169,169)";
         return buttonId;
     }
 }
@@ -145,7 +151,6 @@ async function checkAnswers() {
         let nameText = nameButton.textContent;
         setWords();
         wordIndex = words.indexOf(nameText);
-        console.log("word " + wordIndex);
         let imageButton = document.getElementById(isImageButtonGrey);
         let image = imageButton.children[0];
         let imageText = image.src.split('/').pop();
@@ -159,8 +164,6 @@ async function checkAnswers() {
             }
           }
         imageIndex = images.indexOf(imageText);
-        console.log("image" + imageIndex);
-        console.log("image: " + image + " imageText: " + imageText);
 
         if(wordIndex == imageIndex){
             correctChange();
@@ -264,9 +267,13 @@ let newTime;
 let oldTime;
 function setBestScore(){
     const numOfButtonDisplay = document.getElementById("numOfButtonDisplay");
-    numOfButtonDisplay.textContent = buttonNum + " Buttons:";
+    if(buttonNum != 1){
+        numOfButtonDisplay.textContent = buttonNum + " Buttons:";
+    }else{
+        numOfButtonDisplay.textContent = "1 Button:";
+    }
     var bestTimeDisplay= document.getElementById("bestTimeDisplay");
-    if(localStorage.getItem(buttonNum + "") == "9:99.99"){
+    if(localStorage.getItem(buttonNum + "") == "99:99.99"){
         bestTimeDisplay.textContent = "Best Time: 0:00.00";
     }else{
         bestTimeDisplay.textContent = "Best Time: " + localStorage.getItem(buttonNum + "");

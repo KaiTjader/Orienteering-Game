@@ -6,7 +6,7 @@
 }
 .middleSegment {
     text-align: center;
-    background-color: #FFF;
+    background-color: #FDFDFE;
     color:#09123c;
     font-size: 2vw;
     font-family: Georgia, serif;
@@ -30,7 +30,7 @@
 }
 .imageText {
     font: "Roboto", Arial, sans-serif;
-    color: #FFF;
+    color: #FAFCFF;
     font-size: 7vw;
 }
 .dropdown {
@@ -64,7 +64,7 @@
     border: 2px outset black;
 }
 .scoreBoard {
-    background-color: #FFF;
+    background-color: #FDFDFE;
     color: #09123c;
     font-family: Georgia, serif;
 }
