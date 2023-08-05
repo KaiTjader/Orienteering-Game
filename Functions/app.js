@@ -1,6 +1,38 @@
 /*
 Combine actions to make the game run
 */
+function setUp(){
+    //localStorage.setItem("setBestTimes", "temp"); //restart game
+    if(localStorage.getItem("setBestTimes") != "The times are set"){
+        localStorage.setItem("setBestTimes", "The times are set");
+        localStorage.setItem("1", "9:99.99");
+        localStorage.setItem("5", "9:99.99");
+        localStorage.setItem("15", "9:99.99");
+        localStorage.setItem("30", "9:99.99");
+        localStorage.setItem("44", "9:99.99");
+        beginningDisplay = document.getElementById("beginningScore");
+        p = makeP(beginningDisplay);
+        p.textContent = "Good Luck & I Hope You Enjoy";
+        console.log("Rest Local Storage");
+    }else{
+        let beginningScoreBoard = document.getElementById("beginningScore");
+        p1 = makeP(beginningScoreBoard);
+        p5 = makeP(beginningScoreBoard);
+        p15 = makeP(beginningScoreBoard);
+        p30 = makeP(beginningScoreBoard);
+        p44 = makeP(beginningScoreBoard);
+        p1.textContent = "1 Button: " + localStorage.getItem("1");
+        p5.textContent = "5 Button: " + localStorage.getItem("5");
+        p15.textContent = "15 Button: " + localStorage.getItem("15");
+        p30.textContent = "30 Button: " + localStorage.getItem("30");
+        p44.textContent = "44 Button: " + localStorage.getItem("44");
+    }
+}
+function makeP(parent){
+    let p = document.createElement('p');
+    parent.appendChild(p);
+    return p
+}
 function makeNewGame(){
     removeChildren("image");
     removeChildren("name");
@@ -11,15 +43,6 @@ function makeNewGame(){
 
     restartTimer();
     setCorrect();
-    if(localStorage.getItem("setBestTimes") != "The times are set"){
-        localStorage.setItem("setBestTimes", "The times are set");
-        localStorage.setItem("1", "9:99.99");
-        localStorage.setItem("5", "9:99.99");
-        localStorage.setItem("15", "9:99.99");
-        localStorage.setItem("30", "9:99.99");
-        localStorage.setItem("44", "9:99.99");
-        console.log("Rest Local Storage");
-    }
 }
 function dropdownStart(){
     removeChildren("name");
