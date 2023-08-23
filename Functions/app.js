@@ -1,6 +1,9 @@
 /*
 Combine actions to make the game run
 */
+function ModeDropdownStart(){
+    console.log("ModeDropdownStart");
+}
 function setUp(){
     //localStorage.setItem("setBestTimes", "temp"); //restart game
     if(localStorage.getItem("setBestTimes") != "The times are set"){

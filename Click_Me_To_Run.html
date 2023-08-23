@@ -17,9 +17,9 @@
     </div>
 
     <div class="middleSegment">
-        <div class="ButtoDropdown">
+        <div class="ButtonDropdown">
             <p>Choose Number of Buttons</p>
-            <select class="ButtoDropdown" id="ButtoDropdown" onchange="ButtonDropdownStart()"> 
+            <select class="ButtonDropdown" id="ButtonDropdown" onchange="ButtonDropdownStart()"> 
                 <option value="1">1</option> 
                 <option value="5" selected="selected">5</option>
                 <option value="15">15</option> 
@@ -41,12 +41,23 @@
 
         <div id="rightSide" class="bottomSegment">
             <div id="beginningScore"> </div>
-            <! -- nameButtons go here --> 
+            <! -- nameButtons go here -->
         </div>
     </div>
     <div id="veryBottom" class="veryBottom">
-        <p class="Best" id="numOfButtonDisplay">5 Buttons:</p>
-        <p class="Best" id="bestTimeDisplay">Best Time: 0:00.00</p>
+        <div class="ModeDropdownContainer">
+            <p class="Best">Choose your game mode:</p>
+            <div class="Best">
+                <select class="ModeDropdown" id="ModeDropdown" onchange="ModeDropdownStart()"> 
+                    <option value="Flashcards">Flashcards</option>
+                    <option value="Matching" selected="selected">Matching</option>
+                </select>
+            </div>
+        </div>
+        <div class="BestDiv">
+            <p class="Best" id="numOfButtonDisplay">5 Buttons:</p>
+            <p class="Best" id="bestTimeDisplay">Best Time: 0:00.00</p>
+        </div>
     </div>
 </body>
 </html>

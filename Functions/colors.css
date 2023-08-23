@@ -34,7 +34,7 @@
     color: #FAFCFF;
     font-size: 7vw;
 }
-.ButtoDropdown {
+.ButtonDropdown {
     border: 0px;
     color:#09123c;
     background-color: #FAFCFF;
@@ -69,4 +69,17 @@
     background-color: #FDFDFE;
     color: #09123c;
     font-family: Georgia, serif;
+}
+.ModeDropdownContainer {
+    background-color: #FAFCFF;
+    border-right: .5px solid #09123c;
+}
+.ModeDropdown{
+    background-color: #FAFCFF;
+    border: 0px;
+    font-family: Georgia, serif;
+}
+.BestDiv {
+    background-color: #FAFCFF;
+    border-left: .5px solid #09123c;
 }

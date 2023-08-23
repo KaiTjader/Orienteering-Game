@@ -44,7 +44,7 @@
 .scoreAndClock{
     flex-basis: 33.333333%;
 }
-.ButtoDropdown {
+.ButtonDropdown {
     flex-basis: 33.333333%;
     border: none;
 }
@@ -63,7 +63,17 @@
     bottom: 0;
     width: 100%;
     display: flex;
+    flex-direction: row;
+}
+.ModeDropdownContainer {
+    flex-basis: 50%;
+    display: inline-block;
+}
+.BestDiv {
+    text-align: center;
+    justify-content: center;
+    flex-basis: 50%;
 }
 .Best {
-    flex-grow: 1;
+    display: inline-block;
 }
