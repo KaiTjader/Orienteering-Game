@@ -44,7 +44,7 @@
 .scoreAndClock{
     flex-basis: 33.333333%;
 }
-.dropdown {
+.ButtoDropdown {
     flex-basis: 33.333333%;
     border: none;
 }
@@ -58,7 +58,7 @@
     width: 50px;
     height: 40px;
 }
-.scoreBoard {
+.veryBottom {
     position: fixed;
     bottom: 0;
     width: 100%;

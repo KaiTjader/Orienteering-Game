@@ -14,7 +14,8 @@
 }
 .bottomSegment {
     background-color: rgb(255, 170, 40);
-    margin-right: -2px;
+    margin-right: -1px;
+    margin-left: -1px;
     border: 1px groove #09123c;
 }
 .totalSegment {
@@ -33,7 +34,7 @@
     color: #FAFCFF;
     font-size: 7vw;
 }
-.dropdown {
+.ButtoDropdown {
     border: 0px;
     color:#09123c;
     background-color: #FAFCFF;
@@ -64,7 +65,7 @@
 .imageButtons {
     border: 2px outset black;
 }
-.scoreBoard {
+.veryBottom {
     background-color: #FDFDFE;
     color: #09123c;
     font-family: Georgia, serif;

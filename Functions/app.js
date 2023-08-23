@@ -50,7 +50,7 @@ function makeNewGame(){
     restartTimer();
     setCorrect();
 }
-function dropdownStart(){
+function ButtonDropdownStart(){
     removeChildren("name");
     removeChildren("image");
     isImageButtonGrey = null;
@@ -71,7 +71,7 @@ Button functionality and creation
 //chooses how many buttons
 let buttonNum = 15;
 function startValues(){
-    let dropdownList = document.getElementById("dropdown");
+    let dropdownList = document.getElementById("ButtonDropdown");
     return dropdownList.value
 }
 // Makes the button
