@@ -39,20 +39,13 @@
     width: 100px;
 }
 .startButton {
-    order: 1;
-    flex-grow: 1;
+    flex-basis: 33.333333%;
 }
-.clock {
-    order: 3;
-    flex-grow: 1;
-}
-.score {
-    order: 2;
-    flex-grow: 1;
+.scoreAndClock{
+    flex-basis: 33.333333%;
 }
 .dropdown {
-    order: 0;
-    flex-grow: .5;
+    flex-basis: 33.333333%;
     border: none;
 }
 .imageButtons {
