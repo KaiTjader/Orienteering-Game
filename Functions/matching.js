@@ -1,9 +1,61 @@
 /*
-Combine actions to make the game run
+Changes the mode to Matching
 */
 function ModeDropdownStart(){
-    console.log("ModeDropdownStart");
+    let dropdownList = document.getElementById("ModeDropdown");
+    modeValue = dropdownList.value
+    if(modeValue == "Flashcards"){
+        flashcardStart();
+        console.log("flashcard");
+    }else if(modeValue == "Matching"){
+        makeButtonDropDown();
+        console.log("matching");
+    }
 }
+function makeButtonDropDown(){
+    const dynamicDiv = document.getElementById("dynamicDiv");
+    const div = document.createElement('div');
+    div.className = "ButtonDropdown";
+    dynamicDiv.appendChild(div);
+
+    const p = document.createElement('p');
+    p.textContent = "Choose Number of Buttons";
+    div.appendChild(p);
+    const selectElement = document.createElement('select');
+    selectElement.className = "ButtonDropdown";
+    selectElement.setAttribute("id", "ButtonDropdown");
+    selectElement.onchange = function ButtonDropdownStart(){
+        removeChildren("name");
+        removeChildren("image");
+        isImageButtonGrey = null;
+        isNameButtonGrey = null;
+        buttonNum = startValues();
+        addButtons("name");
+        addButtons("image");
+        stopTimer();
+    
+        setBestScore();
+        restartTimer();
+        setCorrect();
+    }
+    makeDropDownOptions("1", selectElement);
+    makeDropDownOptions("5", selectElement);
+    makeDropDownOptions("15", selectElement);
+    makeDropDownOptions("30", selectElement);
+    makeDropDownOptions("44", selectElement);
+    div.appendChild(selectElement);
+}
+function makeDropDownOptions(value, selectElement){
+    const optionElement = selectElement.appendChild(document.createElement('option'));
+    optionElement.value = value;
+    optionElement.textContent = value;
+    if(value == "5"){
+        optionElement.selected = true;
+    }
+}
+/*
+Combine actions to make the game run
+*/
 function setUp(){
     //localStorage.setItem("setBestTimes", "temp"); //restart game
     if(localStorage.getItem("setBestTimes") != "The times are set"){
@@ -72,10 +124,10 @@ function ButtonDropdownStart(){
 Button functionality and creation
 */
 //chooses how many buttons
-let buttonNum = 15;
+let buttonNum = 5;
 function startValues(){
-    let dropdownList = document.getElementById("ButtonDropdown");
-    return dropdownList.value
+    const dropdownList = document.getElementById('ButtonDropdown');
+    return dropdownList.value;
 }
 // Makes the button
 let isNameButtonGrey = null;
@@ -96,9 +148,31 @@ function makeButton(buttonType, index){
             }
         }
     }
+    /*button.onmouseover = function greyMouse(){
+        if(timerOn){
+            let changeButton = document.getElementById(buttonId);
+            changeButton.style.backgroundColor = "rgb(210,210,210)";
+        }
+    }
+    button.onmouseout = function greyMouse(){
+        if(timerOn){
+            let changeButton = document.getElementById(buttonId);
+            //make it so if it is clicked it will stay grey
+            //keeep green if mouse over
+            if(buttonType == "name"){
+                wordIndex = findWordIndex();
+                console.log("index: " + wordIndex + " index2: " + index);
+            }else if(buttonType == "image"){
+                imageIndex = findImageIndex();
+                console.log("index: " + imageIndex + " index2: " + index);
+            }
+            changeButton.style.backgroundColor = "rgb(253,253,254)";
+        }
+    }*/
     button.id = buttonType + index;
     button.style.flexGrow = 1;
     button.style.margin = "10px 10px 10px 10px";
+    button.style.backgroundColor = "rgb(253,253,254)";
     let div;
     if(buttonType == "name"){
         button.className = "nameButtons";
@@ -115,14 +189,14 @@ function makeButton(buttonType, index){
 // If the button gets clicked
 function modifyButton(greyType, buttonName, buttonId){
     if(greyType == null){
-        buttonName.style.backgroundColor = "rgb(169,169,169)";
+        buttonName.style.backgroundColor = "rgb(135,135,135)";
         return buttonId;
     }else if(greyType == buttonId){
-        buttonName.style.backgroundColor = "white";
+        buttonName.style.backgroundColor = "rgb(253,253,254)";
         return null;
     }else if(greyType != null && greyType != buttonId){
         let currentButton = document.getElementById(greyType);
-        currentButton.style.backgroundColor = "white";
+        currentButton.style.backgroundColor = "rgb(253,253,254)";
         buttonName.style.backgroundColor = "rgb(169,169,169)";
         return buttonId;
     }
@@ -134,7 +208,7 @@ function addButtons(type){
     }
 }
 //let gameOne = true;
-function removeChildren(type){
+function removeChildren(){
     const imageParent = document.getElementById("leftSide");
     while (imageParent.firstChild) {
         imageParent.removeChild(imageParent.firstChild);
@@ -165,7 +239,7 @@ async function checkAnswers() {
                 imageText = imageText.substring(i, imageText.length-4);
                 break;
             }
-          }
+        }
         imageIndex = images.indexOf(imageText);
 
         if(wordIndex == imageIndex){
@@ -179,8 +253,8 @@ async function checkAnswers() {
             nameButton.style.backgroundColor = "red";
             imageButton.style.backgroundColor = "red";
             await sleep(100);
-            nameButton.style.backgroundColor = "white";
-            imageButton.style.backgroundColor = "white";
+            nameButton.style.backgroundColor = "rgb(253,253,254)";
+            imageButton.style.backgroundColor = "rgb(253,253,254)";
         }
         isNameButtonGrey = null;
         isImageButtonGrey = null;
@@ -329,6 +403,8 @@ function stopTimer(){
     startButton.textContent = "Start";
     clearInterval(timerObject);
     timerOn = false;
+    isImageButtonGrey = null;
+    isNameButtonGrey = null;
 }
 function timer(){
     time = add();

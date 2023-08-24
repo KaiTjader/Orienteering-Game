@@ -2,7 +2,8 @@
 <html lang="en">
     <link rel="stylesheet" href="Functions/format.css">
     <link rel="stylesheet" href="Functions/colors.css">
-    <script src="Functions/app.js"></script>
+    <script src="Functions/matching.js"></script>
+    <script src="Functions/flashcards.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,15 +18,17 @@
     </div>
 
     <div class="middleSegment">
-        <div class="ButtonDropdown">
-            <p>Choose Number of Buttons</p>
-            <select class="ButtonDropdown" id="ButtonDropdown" onchange="ButtonDropdownStart()"> 
-                <option value="1">1</option> 
-                <option value="5" selected="selected">5</option>
-                <option value="15">15</option> 
-                <option value="30">30</option> 
-                <option value="44">44</option> 
-            </select>
+        <div class="dynamicDiv" id="dynamicDiv">
+            <div class="ButtonDropdown">
+                <p>Choose Number of Buttons</p>
+                <select class="ButtonDropdown" id="ButtonDropdown" onchange="ButtonDropdownStart()"> 
+                    <option value="1">1</option> 
+                    <option value="5" selected="selected">5</option>
+                    <option value="15">15</option> 
+                    <option value="30">30</option> 
+                    <option value="44">44</option> 
+                </select>
+            </div>
         </div>
         <button type="reset" class="startButton" onclick="startTimer()">Start</button>
         <div class="scoreAndClock">
