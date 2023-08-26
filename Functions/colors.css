@@ -91,18 +91,18 @@
     font-family: Georgia, serif;
     font-size: 4vw;
 }
-.forwardButton {
-    border: 0px;
-    background-color: #FAFCFF;
+.arrowButtons {
     width: 50%;
-    height: 50%;
+    height: 100%;
+    background-color: #FAFCFF;
+    border: .5px solid #09123c;
 }
 .arrow {
     border: solid #09123c;
     background-color: #FAFCFF;
-    border-width: 0 3px 3px 0;
+    border-width: 0 13px 13px 0;
     display: inline-block;
-    padding: 3px;
+    padding: 13px;
   }
 .right {
 transform: rotate(-45deg);

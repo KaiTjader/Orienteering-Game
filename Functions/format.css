@@ -89,9 +89,10 @@
     width: 80%;
     height: 275px;
 }
-.backButton {
-    width: 510px;
+.arrowButtons {
     width: 50%;
+    height: 100%;
+    background-color: #FAFCFF;
 }
 .flashcardButton {
     width: 80%;
