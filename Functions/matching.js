@@ -1,10 +1,12 @@
 /*
 Changes the mode to Matching
 */
+let mode = 0; // 0=Matching 1=Flashcards
 function ModeDropdownStart(){
     let dropdownList = document.getElementById("ModeDropdown");
     modeValue = dropdownList.value
     if(modeValue == "Flashcards"){
+        mode = 1;
         stopTimer();
         setCorrect();
         removeAllChildren();
@@ -12,7 +14,9 @@ function ModeDropdownStart(){
         makeArrowButtons();
         setFlashcard();
     }else if(modeValue == "Matching"){
+        mode = 0;
         setCorrect();
+        stopTimer();
         removeFlashcardSetup();
         makeButtonDropDown();
     }
@@ -219,7 +223,6 @@ function addButtons(type){
         makeButton(type, i);
     }
 }
-//let gameOne = true;
 function removeChildren(){
     const imageParent = document.getElementById("leftSide");
     while (imageParent.firstChild) {
@@ -400,9 +403,12 @@ let sec = 0;
 let milSec = 0;
 function startTimer(){
     const startButton = document.querySelector('.startButton');
-    if(!timerOn){
+    if(!timerOn && mode == 0){
         makeNewGame();
-        gameOne = false;
+        timerObject = setInterval("timer()", 10);
+        startButton.textContent = "Stop";
+        timerOn = true;
+    }else if(!timerOn && mode == 1){
         timerObject = setInterval("timer()", 10);
         startButton.textContent = "Stop";
         timerOn = true;
