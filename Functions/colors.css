@@ -42,12 +42,9 @@
 }
 .startButton {
     background-color: rgb(255, 170, 40);
-    color:#09123c;
-    color:#09123c;
-    font-size: 4vw;
     font-family: Georgia, serif;
     color: #09123c;
-    font-size: 3vw;
+    font-size: 5vw;
 }
 .clock {
     color:#09123c;
@@ -82,4 +79,36 @@
 .BestDiv {
     background-color: #FAFCFF;
     border-left: .5px solid #09123c;
+}
+
+.flashcardButton {
+    background-color: #FDFDFE;
+    color: #09123c;
+    font-family: Georgia, serif;
+}
+.h2Flashcard {
+    color: #09123c;
+    font-family: Georgia, serif;
+    font-size: 4vw;
+}
+.forwardButton {
+    border: 0px;
+    background-color: #FAFCFF;
+    width: 50%;
+    height: 50%;
+}
+.arrow {
+    border: solid #09123c;
+    background-color: #FAFCFF;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+.right {
+transform: rotate(-45deg);
+-webkit-transform: rotate(-45deg);
+}
+.left {
+transform: rotate(135deg);
+-webkit-transform: rotate(135deg);
 }

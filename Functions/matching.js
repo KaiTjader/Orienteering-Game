@@ -5,11 +5,14 @@ function ModeDropdownStart(){
     let dropdownList = document.getElementById("ModeDropdown");
     modeValue = dropdownList.value
     if(modeValue == "Flashcards"){
-        flashcardStart();
-        console.log("flashcard");
+        stopTimer();
+        removeAllChildren();
+        makeFlashcard();
+        makeArrowButtons();
+        setFlashcard();
     }else if(modeValue == "Matching"){
+        removeFlashcardSetup();
         makeButtonDropDown();
-        console.log("matching");
     }
 }
 function makeButtonDropDown(){
@@ -51,6 +54,13 @@ function makeDropDownOptions(value, selectElement){
     optionElement.textContent = value;
     if(value == "5"){
         optionElement.selected = true;
+    }
+}
+function removeFlashcardSetup(){
+    removeAllChildren();
+    flashcardDiv = document.getElementById("flashcardDiv");
+    while (flashcardDiv.firstChild) {
+        flashcardDiv.removeChild(flashcardDiv.firstChild);
     }
 }
 /*
