@@ -70,7 +70,6 @@ let isName = true;
 function setFlashcard(){
     const h2 = document.getElementById("h2Flashcard");
     if(isName){
-        //remove image here
         try {
             const image = document.getElementById("imageFlashcard");
             image.remove();
@@ -79,7 +78,6 @@ function setFlashcard(){
           }
         h2.textContent = nameArray[index];
     }else{
-        //make image here
         const flashcardButton = document.getElementById("flashcardButton");
         let image = document.createElement('img');
         image.src = "buttonImages/" + imageArray[index] + ".png";
@@ -88,4 +86,10 @@ function setFlashcard(){
         flashcardButton.appendChild(image);
         h2.textContent = "";
     }
+    setPercentage();
+}
+//funcitonality of percentage
+function setPercentage(){
+    const scoreText = document.getElementById("score");
+    scoreText.textContent = index+1 + "/44";
 }

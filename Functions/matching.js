@@ -6,11 +6,13 @@ function ModeDropdownStart(){
     modeValue = dropdownList.value
     if(modeValue == "Flashcards"){
         stopTimer();
+        setCorrect();
         removeAllChildren();
         makeFlashcard();
         makeArrowButtons();
         setFlashcard();
     }else if(modeValue == "Matching"){
+        setCorrect();
         removeFlashcardSetup();
         makeButtonDropDown();
     }
