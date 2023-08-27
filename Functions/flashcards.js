@@ -1,6 +1,12 @@
 /*
 Changes the mode to Matching
 */
+function makeFlashcardSetup(){
+    makeFlashcard();
+    makeArrowButtons();
+    setFlashcard();
+    makeInstructions();
+}
 function removeAllChildren(){
     const dynamicDiv = document.getElementById("dynamicDiv");
     while (dynamicDiv.firstChild) {
@@ -13,6 +19,10 @@ function removeAllChildren(){
     const nameParent = document.getElementById("rightSide");
     while (nameParent.firstChild) {
         nameParent.removeChild(nameParent.firstChild);
+    }
+    let BestDiv = document.getElementById("BestDiv");
+    while (BestDiv.firstChild) {
+        BestDiv.removeChild(BestDiv.firstChild);
     }
 }  
 function makeFlashcard(){
@@ -83,6 +93,15 @@ function nextCard(border, change){
         setFlashcard();
     }
 }
+function makeInstructions(){
+    let BestDiv = document.getElementById("BestDiv");
+    const p = document.createElement('p');
+    p.className = "Best";
+    p.id = "Instructions";
+    p.textContent = 'Press "Start" to time yourself';
+    BestDiv.appendChild(p);
+}
+//funciontality
 let imageArray = setImages();
 let nameArray = setWords();
 let index = 0;

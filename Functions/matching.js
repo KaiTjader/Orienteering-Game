@@ -10,9 +10,7 @@ function ModeDropdownStart(){
         stopTimer();
         setCorrect();
         removeAllChildren();
-        makeFlashcard();
-        makeArrowButtons();
-        setFlashcard();
+        makeFlashcardSetup();
     }else if(modeValue == "Matching"){
         mode = 0;
         setCorrect();
@@ -53,6 +51,18 @@ function makeButtonDropDown(){
     makeDropDownOptions("30", selectElement);
     makeDropDownOptions("44", selectElement);
     div.appendChild(selectElement);
+
+    let BestDiv = document.getElementById("BestDiv");
+    const p1 = document.createElement('p');
+    p1.className = "Best";
+    p1.id = "numOfButtonDisplay";
+    p1.textContent = "5 Buttons:";
+    BestDiv.appendChild(p1);
+    const p2 = document.createElement('p');
+    p2.className = "Best";
+    p2.id = "bestTimeDisplay";
+    p2.textContent = "Best Time: " + localStorage.getItem("5");
+    BestDiv.appendChild(p2);
 }
 function makeDropDownOptions(value, selectElement){
     const optionElement = selectElement.appendChild(document.createElement('option'));
