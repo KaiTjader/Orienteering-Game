@@ -1,27 +1,33 @@
+:root {
+    --globalWhite: #FAFCFF;
+    --globalBlue: #09123c;
+    --globalOrange: rgb(255, 170, 40);
+}
+
 .topSegment {
     text-align: center;
-    border: solid rgb(255, 170, 40);
+    border: solid var(--globalOrange);
     border-radius: 10px;
     margin-bottom: 2%;
 }
 .middleSegment {
     text-align: center;
-    background-color: #FDFDFE;
-    color:#09123c;
+    background-color: var(--globalWhite);
+    color:var(--globalBlue);
     font-size: 2vw;
     font-family: Georgia, serif;
     font-weight: bold;
 }
 .bottomSegment {
-    background-color: rgb(255, 170, 40);
+    background-color: var(--globalOrange);
     margin-right: -1px;
     margin-left: -1px;
-    border: 1px groove #09123c;
+    border: 1px groove var(--globalBlue);
 }
 .totalSegment {
     text-align: center;
-    background-color: #09123c;
-    color:#09123c;
+    background-color: var(--globalBlue);
+    color:var(--globalBlue);
 }
 
 
@@ -31,23 +37,23 @@
 }
 .imageText {
     font: "Roboto", Arial, sans-serif;
-    color: #FAFCFF;
+    color: var(--globalWhite);
     font-size: 7vw;
 }
 .ButtonDropdown {
     border: 0px;
-    color:#09123c;
-    background-color: #FAFCFF;
+    color:var(--globalBlue);
+    background-color: var(--globalWhite);
     font-family: 'Lato';font-size: 22px;
 }
 .startButton {
-    background-color: rgb(255, 170, 40);
+    background-color: var(--globalOrange);
     font-family: Georgia, serif;
-    color: #09123c;
+    color: var(--globalBlue);
     font-size: 5vw;
 }
 .clock {
-    color:#09123c;
+    color:var(--globalBlue);
     font-family: 'Lato';font-size: 22px;
 }
 .score {
@@ -57,52 +63,59 @@
     font-weight: bold;
     border: 1px outset black;
     font-family: "Times New Roman", Times, serif;
-    color:#09123c;
+    color:var(--globalBlue);
 }
 .imageButtons {
     border: 2px outset black;
 }
 .veryBottom {
-    background-color: #FDFDFE;
-    color: #09123c;
+    background-color: var(--globalWhite);
+    color: var(--globalBlue);
     font-family: Georgia, serif;
 }
 .ModeDropdownContainer {
-    background-color: #FAFCFF;
-    border-right: .5px solid #09123c;
+    background-color: var(--globalWhite);
+    border-right: .5px solid var(--globalBlue);
 }
 .ModeDropdown{
-    background-color: #FAFCFF;
+    background-color: var(--globalWhite);
     border: 0px;
     font-family: Georgia, serif;
 }
 .BestDiv {
-    background-color: #FAFCFF;
-    border-left: .5px solid #09123c;
+    background-color: var(--globalWhite);
+    border-left: .5px solid var(--globalBlue);
 }
 
 .flashcardButton {
-    background-color: #FDFDFE;
-    color: #09123c;
+    background-color: var(--globalWhite);
+    color: var(--globalBlue);
+    border: ridge var(--globalOrange);
+    font-family: Georgia, serif;
+}
+.flashcardButtonFlipped {
+    background-color: var(--globalWhite);
+    border: ridge var(--globalOrange);
+    color: var(--globalBlue);
     font-family: Georgia, serif;
 }
 .h2Flashcard {
-    color: #09123c;
+    color: var(--globalBlue);
     font-family: Georgia, serif;
     font-size: 4vw;
 }
 .arrowButtons {
     width: 50%;
     height: 100%;
-    background-color: #FAFCFF;
-    border: .5px solid #09123c;
+    background-color: var(--globalWhite);
+    border: .5px solid var(--globalBlue);
 }
 .arrow {
-    border: solid #09123c;
-    background-color: #FAFCFF;
-    border-width: 0 13px 13px 0;
+    border: solid var(--globalBlue);
+    background-color: var(--globalWhite);
+    border-width: 0 7.5px 7.5px 0;
     display: inline-block;
-    padding: 13px;
+    padding: 10px;
   }
 .right {
 transform: rotate(-45deg);

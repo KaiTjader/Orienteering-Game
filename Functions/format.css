@@ -97,4 +97,12 @@
 .flashcardButton {
     width: 80%;
     height: 85%;
+    transition-duration: 1s;
+    transform: rotateY(0);
+}
+.flashcardButtonFlipped {
+    width: 80%;
+    height: 85%;
+    transition-duration: 1s;
+    transform: rotateY(3.142rad);
 }
