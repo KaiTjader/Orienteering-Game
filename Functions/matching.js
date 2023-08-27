@@ -409,6 +409,7 @@ function startTimer(){
         startButton.textContent = "Stop";
         timerOn = true;
     }else if(!timerOn && mode == 1){
+        restartTimer();
         timerObject = setInterval("timer()", 10);
         startButton.textContent = "Stop";
         timerOn = true;
