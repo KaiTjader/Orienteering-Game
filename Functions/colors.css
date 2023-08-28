@@ -26,8 +26,21 @@
 }
 .totalSegment {
     text-align: center;
-    background-color: var(--globalBlue);
+    background: linear-gradient(-45deg, #050a24, var(--globalBlue),  #0c184f, var(--globalBlue));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
     color:var(--globalBlue);
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 
