@@ -6,8 +6,12 @@ function makeFlashcardSetup(){
     makeArrowButtons();
     setFlashcard();
     makeInstructions();
+    makeTerms();
 }
 function removeAllChildren(){
+    removeChild("dynamicDiv");
+    removeChildren();
+    removeChild("BestDiv");
     const dynamicDiv = document.getElementById("dynamicDiv");
     while (dynamicDiv.firstChild) {
         dynamicDiv.removeChild(dynamicDiv.firstChild);
@@ -82,6 +86,7 @@ function nextCard(border, change){
     if(index != border){
         index += change;
         isImage = true;
+        notSleep = true;
         try {
             const image = document.getElementById("imageFlashcard");
             image.remove();
@@ -98,16 +103,46 @@ function makeInstructions(){
     const p = document.createElement('p');
     p.className = "Best";
     p.id = "Instructions";
-    p.textContent = 'Press "Start" to time yourself';
+    p.textContent = 'Press "Start" to time yourself. Score donw to study too.';
     BestDiv.appendChild(p);
+}
+function makeTerms(){
+    let termsDiv = document.getElementById("insideTermsDiv");
+    let wordsList = setWords();
+    let imageList = setImages();
+    for (let i = 0; i < wordsList.length; i++) {
+        makeOneTerm(termsDiv, wordsList[i], imageList[i]);
+      }
+}
+function makeOneTerm(termsDiv, wordName, imageName){
+    const div = document.createElement('div');
+    div.className = "term";
+    div.id = "term";
+    termsDiv.appendChild(div);
+    const p = document.createElement('p');
+    p.className = "termText";
+    p.id = "termText";
+    p.textContent = wordName + "  ";
+    div.appendChild(p);
+    const img = document.createElement('img');
+    img.className = "termImage";
+    img.id = "termImage";
+    img.src = "buttonImages/" + imageName + ".png";
+    div.appendChild(img);
 }
 //funciontality
 let imageArray = setImages();
 let nameArray = setWords();
 let index = 0;
 let isImage = true;
-function setFlashcard(){
+let notSleep = true;
+async function setFlashcard(){
     const h2 = document.getElementById("h2Flashcard");
+    if(!notSleep){
+        await sleep(250);
+    }else{
+        notSleep = false;
+    }
     if(!isImage){
         try {
             const image = document.getElementById("imageFlashcard");

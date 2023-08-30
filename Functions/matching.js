@@ -74,10 +74,9 @@ function makeDropDownOptions(value, selectElement){
 }
 function removeFlashcardSetup(){
     removeAllChildren();
-    flashcardDiv = document.getElementById("flashcardDiv");
-    while (flashcardDiv.firstChild) {
-        flashcardDiv.removeChild(flashcardDiv.firstChild);
-    }
+    removeChild("flashcardDiv");
+    removeChild("termsDiv");
+    removeChild("termsDiv");
 }
 /*
 Combine actions to make the game run
@@ -147,7 +146,7 @@ function ButtonDropdownStart(){
 }
 
 /*
-Button functionality and creation
+Elements functionality and creation
 */
 //chooses how many buttons
 let buttonNum = 5;
@@ -174,27 +173,21 @@ function makeButton(buttonType, index){
             }
         }
     }
-    /*button.onmouseover = function greyMouse(){
-        if(timerOn){
-            let changeButton = document.getElementById(buttonId);
+    button.onmouseover = function greyMouse(){
+        const changeButton = document.getElementById(buttonId);
+        let backgroundColor = window.getComputedStyle(changeButton).backgroundColor;
+        if(timerOn & backgroundColor != "rgb(144, 238, 144)" & backgroundColor != "rgb(135, 135, 135)"){
             changeButton.style.backgroundColor = "rgb(210,210,210)";
         }
     }
     button.onmouseout = function greyMouse(){
-        if(timerOn){
-            let changeButton = document.getElementById(buttonId);
-            //make it so if it is clicked it will stay grey
-            //keeep green if mouse over
-            if(buttonType == "name"){
-                wordIndex = findWordIndex();
-                console.log("index: " + wordIndex + " index2: " + index);
-            }else if(buttonType == "image"){
-                imageIndex = findImageIndex();
-                console.log("index: " + imageIndex + " index2: " + index);
-            }
+        const changeButton = document.getElementById(buttonId);
+        let backgroundColor = window.getComputedStyle(changeButton).backgroundColor;
+        if(timerOn & backgroundColor != "rgb(144, 238, 144)" & backgroundColor != "rgb(135, 135, 135)"){
+            console.log("background: " + backgroundColor);
             changeButton.style.backgroundColor = "rgb(253,253,254)";
         }
-    }*/
+    }
     button.id = buttonType + index;
     button.style.flexGrow = 1;
     button.style.margin = "10px 10px 10px 10px";
@@ -234,13 +227,22 @@ function addButtons(type){
     }
 }
 function removeChildren(){
-    const imageParent = document.getElementById("leftSide");
-    while (imageParent.firstChild) {
-        imageParent.removeChild(imageParent.firstChild);
+    removeChild("leftSide");
+    removeChild("rightSide");
+}
+function removeChild(element){
+    const elementName = document.getElementById(element);
+    while (elementName.firstChild) {
+        elementName.removeChild(elementName.firstChild);
     }
-    const nameParent = document.getElementById("rightSide");
-    while (nameParent.firstChild) {
-        nameParent.removeChild(nameParent.firstChild);
+}
+//Give the Title annimation
+function changeSize(time){
+    const startText = document.getElementById("startButton");
+    if(time == 'on'){
+        startText.style.fontSize = "8vw";
+    }else if(time == 'off'){
+        startText.style.fontSize = "6vw";
     }
 }
 

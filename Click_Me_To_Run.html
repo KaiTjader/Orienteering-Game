@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="Functions/format.css">
     <link rel="stylesheet" href="Functions/colors.css">
     <script src="Functions/matching.js"></script>
-    <script src="Functions/flashcards.js"></script>
+    <script defer src="Functions/flashcards.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
 <body class="totalSegment" onload="setUp()">
     <div class="topSegment">
         <img src="Functions/Orienteering.png" alt="LCHS ROTC Photo" class="orienteeringPhoto">
-        <h1 class="imageText">LCHS NJROTC Orienteering</h1>
+        <h1 class="imageText" id="imageText" onmouseover="changeSize('on')" onmouseout="changeSize('on')">LCHS NJROTC Orienteering</h1>
         <img class="LCHSLogo" src="Functions/LCHSLogo.png" alt="LCHS Logo">
         <img class="ROTCLogo" src="Functions/ROTCLogo.png" alt="NJROTC Logo">
     </div>
@@ -30,7 +30,7 @@
                 </select>
             </div>
         </div>
-        <button type="reset" class="startButton" onclick="startTimer()">Start</button>
+        <button type="reset" class="startButton" id="startButton" onmouseover="changeSize('on')" onmouseout="changeSize('off')"onclick="startTimer()">Start</button>
         <div class="scoreAndClock">
             <p class="clock" id="clock">0:00.00</p>
             <p class="score" id="score">0%</p>
@@ -49,6 +49,11 @@
     </div>
     <div class="flashcardDiv" id="flashcardDiv">
         <! -- flashcard goes here -- >
+    </div>
+    <div class="termsDiv" id="termsDiv">
+        <div class="insideTermsDiv" id="insideTermsDiv">
+            <! -- flashcard goes here -- >
+        </div>
     </div>
     <div id="veryBottom" class="veryBottom">
         <div class="ModeDropdownContainer">

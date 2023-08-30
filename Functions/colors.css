@@ -26,9 +26,9 @@
 }
 .totalSegment {
     text-align: center;
-    background: linear-gradient(-45deg, #050a24, var(--globalBlue),  #0c184f, var(--globalBlue));
+    background: linear-gradient(-45deg, #040920, var(--globalBlue),  #0d1a55, var(--globalBlue));
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 25s ease infinite;
     color:var(--globalBlue);
 }
 @keyframes gradient {
@@ -42,8 +42,6 @@
         background-position: 0% 50%;
     }
 }
-
-
 .orienteeringPhoto{
     opacity: 0.5;
     border-radius: 10px;
@@ -52,6 +50,8 @@
     font: "Roboto", Arial, sans-serif;
     color: var(--globalWhite);
     font-size: 7vw;
+    transition-duration: 1s;
+    text-align: center
 }
 .ButtonDropdown {
     border: 0px;
@@ -63,7 +63,8 @@
     background-color: var(--globalOrange);
     font-family: Georgia, serif;
     color: var(--globalBlue);
-    font-size: 5vw;
+    font-size: 6vw;
+    transition-duration: .5s;
 }
 .clock {
     color:var(--globalBlue);
@@ -108,7 +109,7 @@
 }
 .flashcardButtonFlipped {
     background-color: var(--globalWhite);
-    border: ridge var(--globalOrange);
+    border: ridge 3px var(--globalOrange);
     color: var(--globalBlue);
     font-family: Georgia, serif;
 }
@@ -137,4 +138,20 @@ transform: rotate(-45deg);
 .left {
 transform: rotate(135deg);
 -webkit-transform: rotate(135deg);
+}
+.term {
+    background-color: var(--globalOrange);
+    color: var(--globalBlue);
+    display: grid;
+    place-items: center;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 6%;
+    width: 45%;
+    border: 10px var(--globalWhite);
+}
+.termText {
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    color:var(--globalBlue);
 }
