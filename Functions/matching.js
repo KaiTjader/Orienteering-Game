@@ -184,7 +184,6 @@ function makeButton(buttonType, index){
         const changeButton = document.getElementById(buttonId);
         let backgroundColor = window.getComputedStyle(changeButton).backgroundColor;
         if(timerOn & backgroundColor != "rgb(144, 238, 144)" & backgroundColor != "rgb(135, 135, 135)"){
-            console.log("background: " + backgroundColor);
             changeButton.style.backgroundColor = "rgb(253,253,254)";
         }
     }
@@ -236,13 +235,21 @@ function removeChild(element){
         elementName.removeChild(elementName.firstChild);
     }
 }
-//Give the Title annimation
+//Give the Title and start button animations
 function changeSize(time){
     const startText = document.getElementById("startButton");
     if(time == 'on'){
         startText.style.fontSize = "8vw";
     }else if(time == 'off'){
         startText.style.fontSize = "6vw";
+    }
+}
+function changeColor(time){
+    const title = document.getElementById("imageText");
+    if(time == 'on'){
+        title.style.fontSize = "8vw";
+    }else if(time == 'off'){
+        title.style.fontSize = "7vw";
     }
 }
 

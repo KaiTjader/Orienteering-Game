@@ -103,11 +103,11 @@ function makeInstructions(){
     const p = document.createElement('p');
     p.className = "Best";
     p.id = "Instructions";
-    p.textContent = 'Press "Start" to time yourself. Score donw to study too.';
+    p.textContent = 'Press "Start" to time yourself.';
     BestDiv.appendChild(p);
 }
 function makeTerms(){
-    let termsDiv = document.getElementById("insideTermsDiv");
+    let termsDiv = document.getElementById("termsDiv");
     let wordsList = setWords();
     let imageList = setImages();
     for (let i = 0; i < wordsList.length; i++) {
@@ -173,3 +173,18 @@ function setPercentage(){
     const scoreText = document.getElementById("score");
     scoreText.textContent = index+1 + "/44";
 }
+
+// Make jelly score for terms:
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry);
+        if(entry.isIntersecting) {
+            entry.target.classList.add('scroll');
+        }else{
+            entry.target.classList.remove('scroll');
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll('term');
+hiddenElements.forEach((el) => observer.observe(el));

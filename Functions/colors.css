@@ -140,18 +140,27 @@ transform: rotate(135deg);
 -webkit-transform: rotate(135deg);
 }
 .term {
-    background-color: var(--globalOrange);
+    background-color: var(--globalWhite);
     color: var(--globalBlue);
-    display: grid;
+    border: solid;
+    border-color: var(--globalOrange);
+    border-radius: 10px;
     place-items: center;
     display: inline-grid;
     grid-template-columns: 1fr 1fr;
-    margin-left: 6%;
-    width: 45%;
-    border: 10px var(--globalWhite);
+    margin-bottom: 10px;
+    width: 51%;
+    transition: all 3s;
+    opacity: 1;
+    filter: blur(0);
+}
+.scroll {
+    opacity: 0;
+    filter: blur(5px);
 }
 .termText {
     font-weight: bold;
+    font-size: large;
     font-family: "Times New Roman", Times, serif;
     color:var(--globalBlue);
 }
