@@ -245,11 +245,14 @@ function changeSize(time){
     }
 }
 function changeColor(time){
-    const title = document.getElementById("imageText");
     if(time == 'on'){
-        title.style.fontSize = "8vw";
+        const title = document.getElementById("imageText");
+        title.className = "imageTextAnimate";
+        title.id = "imageTextAnimate";
     }else if(time == 'off'){
-        title.style.fontSize = "7vw";
+        const title = document.getElementById("imageTextAnimate");
+        title.className = "imageText";
+        title.id = "imageText";
     }
 }
 

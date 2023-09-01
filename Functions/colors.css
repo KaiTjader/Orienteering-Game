@@ -51,13 +51,37 @@
     color: var(--globalWhite);
     font-size: 7vw;
     transition-duration: 1s;
-    text-align: center
+    text-align: center;
+}
+.imageTextAnimate {
+    text-align: center;
+    color: #fffefe61;
+    background: -webkit-gradient(linear, left top, right top, from(#e6e6e6), to(#1d1c1c), color-stop(0.8, #ffffff)) no-repeat;
+    background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.8, #fff)) no-repeat;
+    background-size: 110px 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: flick 1.5s infinite;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 7.1vw;
+}
+@keyframes flick {
+    0% {
+    background-position: top left;
+    }
+    100% {
+    background-position: top right;
+    }
 }
 .ButtonDropdown {
     border: 0px;
     color:var(--globalBlue);
     background-color: var(--globalWhite);
-    font-family: 'Lato';font-size: 22px;
+    font-family: 'Lato';
+    font-size: 22px;
 }
 .startButton {
     background-color: var(--globalOrange);
@@ -150,7 +174,7 @@ transform: rotate(135deg);
     grid-template-columns: 1fr 1fr;
     margin-bottom: 10px;
     width: 51%;
-    transition: all 3s;
+    transition: all 20s;
     opacity: 1;
     filter: blur(0);
 }
