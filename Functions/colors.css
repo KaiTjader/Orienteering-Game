@@ -25,13 +25,13 @@
 }
 .middleSegment {
     border: 1px var(--globalBlue) solid;
+    border-bottom: none;
     text-align: center;
     background-color: var(--globalWhite);
     color:var(--globalBlue);
     font-size: 2vw;
     font-family: Georgia, serif;
     font-weight: bold;
-    height: 10%;
 }
 .bottomSegment {
     background-color: var(--globalOrange);
@@ -62,14 +62,14 @@
     }
 }
 .orienteeringPhoto{
-    opacity: 0.7;
+    opacity: 0.8;
     border-radius: 7px;
-    height: 300px;
+    height: 100%;
 }
 .imageText {
     font: "Roboto", Arial, sans-serif;
     color: var(--globalWhite);
-    font-size: 7vw;
+    font-size: 75px;
     transition-duration: 1s;
     text-align: center;
 }
@@ -85,8 +85,8 @@
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 7vw;
+    transform: translate(-50%, -60%);
+    font-size: 75px;
 }
 @keyframes flick {
     0% {
@@ -112,10 +112,22 @@
 }
 .clock {
     color:var(--globalBlue);
-    font-family: 'Lato';font-size: 22px;
+    font-family: 'Lato';
+    font-size: 22px;
 }
 .score {
-    font-family: 'Lato'; font-size: 22px;
+    font-family: 'Lato';
+    font-size: 22px;
+}
+.Instructions {
+    font-family: Georgia, serif;
+    color: var(--globalBlue);
+    font-size: 17px;
+}
+.beginningScore {
+    font-family: Georgia, serif;
+    color: var(--globalBlue);
+    font-size: 17px;
 }
 .nameButtons {
     font-weight: bold;

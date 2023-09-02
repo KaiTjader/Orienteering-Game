@@ -4,7 +4,7 @@ Changes the mode to Matching
 let mode = 0; // 0=Matching 1=Flashcards
 function ModeDropdownStart(){
     let dropdownList = document.getElementById("ModeDropdown");
-    modeValue = dropdownList.value
+    modeValue = dropdownList.value;
     if(modeValue == "Flashcards"){
         mode = 1;
         stopTimer();
@@ -17,6 +17,7 @@ function ModeDropdownStart(){
         stopTimer();
         removeFlashcardSetup();
         makeButtonDropDown();
+        makePreSetup();
     }
 }
 function makeButtonDropDown(){
@@ -64,6 +65,14 @@ function makeButtonDropDown(){
     p2.textContent = "Best Time: " + localStorage.getItem("5");
     BestDiv.appendChild(p2);
 }
+function makePreSetup(){
+    const click = document.getElementById("leftSide");
+    const p = makeP(click);
+    p.textContent = 'Click "Start" To Begin';
+    p.className = "Instructions";
+    p.id = "Instructions";
+    makeScoreBoard();
+}
 function makeDropDownOptions(value, selectElement){
     const optionElement = selectElement.appendChild(document.createElement('option'));
     optionElement.value = value;
@@ -82,7 +91,7 @@ function removeFlashcardSetup(){
 Combine actions to make the game run
 */
 function setUp(){
-    //localStorage.setItem("setBestTimes", "temp"); //restart game
+    //localStorage.setItem("setBestTimes", "temp"); //restart all saved data
     if(localStorage.getItem("setBestTimes") != "The times are set"){
         localStorage.setItem("setBestTimes", "The times are set");
         localStorage.setItem("1", "99:99.99");
@@ -95,13 +104,20 @@ function setUp(){
         p.textContent = "Good Luck & I Hope You Enjoy";
         console.log("Rest Local Storage");
     }else{
-        let beginningScoreBoard = document.getElementById("beginningScore");
-        setPtext(makeP(beginningScoreBoard),"1");
-        setPtext(makeP(beginningScoreBoard),"5");
-        setPtext(makeP(beginningScoreBoard),"15");
-        setPtext(makeP(beginningScoreBoard),"30");
-        setPtext(makeP(beginningScoreBoard),"44");
+        makeScoreBoard();
     }
+}
+function makeScoreBoard(){
+    let rightSide = document.getElementById("rightSide");
+    let beginningScoreBoard = document.createElement('div');
+    beginningScoreBoard.className = "beginningScore";
+    beginningScoreBoard.id = "beginningScore";
+    rightSide.appendChild(beginningScoreBoard);
+    setPtext(makeP(beginningScoreBoard),"1");
+    setPtext(makeP(beginningScoreBoard),"5");
+    setPtext(makeP(beginningScoreBoard),"15");
+    setPtext(makeP(beginningScoreBoard),"30");
+    setPtext(makeP(beginningScoreBoard),"44");
 }
 function setPtext(p,num){
     let plural = 's: ';
@@ -239,7 +255,7 @@ function removeChild(element){
 function changeStartSize(time){
     const startText = document.getElementById("startButton");
     if(time == 'on'){
-        startText.style.fontSize = "6vw";
+        startText.style.fontSize = "5vw";
     }else if(time == 'off'){
         startText.style.fontSize = "4vw";
     }
@@ -257,10 +273,13 @@ function changeColor(time){
 }
 function changeBackgound(){
     const backgound = document.getElementById("totalSegmant");
+    const topPic = document.getElementById("orienteeringPhoto");
     if(backgound.className == "totalSegmentBlue"){
         backgound.className = "totalSegmentWhite";
+        topPic.style.opacity = 0.8;
     }else{
         backgound.className = "totalSegmentBlue";
+        topPic.style.opacity = 0.7;
     }
 }
 

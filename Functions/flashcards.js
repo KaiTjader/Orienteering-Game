@@ -102,7 +102,7 @@ function makeArrowButtons(){
         i2.style.padding = "10px";
     };*/
 }
-function nextCard(border, change){
+async function nextCard(border, change){
     if(index != border){
         index += change;
         isImage = true;
@@ -113,7 +113,9 @@ function nextCard(border, change){
           }catch (e) {
             // catches if there was no image
         }
-        //make the card flip
+        flashcardButton.className = "flashcardButtonNext";
+        await sleep(1000);
+        flashcardButton.className = "flashcardButtonNext2";
         setFlashcard();
     }
 }

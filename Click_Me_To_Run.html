@@ -11,7 +11,7 @@
 </head>
 <body id="totalSegmant" class="totalSegmentWhite" onload="setUp()">
     <div class="topSegment" id="topSegment">
-        <img src="Functions/Orienteering.jpg" alt="LCHS ROTC Photo" class="orienteeringPhoto">
+        <img src="Functions/Orienteering.jpg" alt="LCHS ROTC Photo" class="orienteeringPhoto" id="orienteeringPhoto">
         <h1 class="imageText" id="imageText" onclick="changeBackgound()" onmouseover="changeColor('on')" onmouseout="changeColor('off')">LCHS<br>NJROTC<br>Orienteering</h1>
         <img class="LCHSLogo" src="Functions/LCHSLogo.png" alt="LCHS Logo">
         <img class="ROTCLogo" src="Functions/ROTCLogo.png" alt="NJROTC Logo">
@@ -38,14 +38,11 @@
     </div>
     <div>
         <div id="leftSide" class="bottomSegment">
-            <p id="Instructions">Click "Start" To Begin</p>
+            <p id="Instructions" class="Instructions">Click "Start" To Begin</p>
             <! -- imageButtons goes here -- > 
         </div>
-
-        <div id="rightSide" class="bottomSegment">
-            <div id="beginningScore"> </div>
-            <! -- nameButtons goes here -- >
-        </div>
+    <div id="rightSide" class="bottomSegment">
+        <! -- nameButtons goes here -- >
     </div>
     <div class="flashcardDiv" id="flashcardDiv">
         <! -- flashcard goes here -- >

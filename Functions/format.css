@@ -21,7 +21,7 @@
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -60%);
 }
 .LCHSLogo {
     position: absolute;
@@ -104,6 +104,18 @@
     height: 85%;
     transition-duration: 1s;
     transform: rotateY(3.142rad);
+}
+.flashcardButtonNext {
+    width: 80%;
+    height: 85%;
+    transition-duration: 1s;
+    transform: rotatex(3.142rad);
+}
+.flashcardButtonNext2 {
+    width: 80%;
+    height: 85%;
+    transition-duration: 0s;
+    transform: rotatex(0);
 }
 .termsDiv {
     margin-bottom: 100px;
