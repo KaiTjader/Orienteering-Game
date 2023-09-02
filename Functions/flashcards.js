@@ -66,21 +66,41 @@ function makeArrowButtons(){
     const backButton = document.createElement('button');
     backButton.className = "arrowButtons";
     backButton.onclick = function flashcardBackward() {
-    nextCard(0, -1);
+        nextCard(0, -1);
     };
     const i1 = document.createElement('i');
     i1.className = "arrow left";
+    i1.id = "arrow left";
     backButton.appendChild(i1);
     const forwardButton = document.createElement('button');
     forwardButton.className = "arrowButtons";
     forwardButton.onclick = function flashcardForward() {
-    nextCard(43, 1);
+        nextCard(43, 1);
     };
     const i2 = document.createElement('i');
     i2.className = "arrow right";
+    i2.id = "arrow right";
     forwardButton.appendChild(i2);
     dynamicDiv.appendChild(backButton);
     dynamicDiv.appendChild(forwardButton);
+    /*backButton.onmouseover = function changeArrowRightSize() {
+        i1.style.borderWidth = "0 10px 10px 0";
+        i1.style.padding = "10px";
+    };
+    backButton.onmouseout = function changeArrowRightSize() {
+        i1.style.borderWidth = "0 7.5px 7.5px 0";
+        i1.style.padding = "10px";
+    };
+    forwardButton.onmouseover = function changeArrowRightSize() {
+        const startText = document.getElementById("right");
+        startText.style.borderWidth = "0 10px 10px 0";
+        i2.style.padding = "10px";
+    };
+    forwardButton.onmouseout = function changeArrowRightSize() {
+        const startText = document.getElementById("right");
+        startText.style.borderWidth = "0 7.5px 7.5px 0";
+        i2.style.padding = "10px";
+    };*/
 }
 function nextCard(border, change){
     if(index != border){
@@ -93,8 +113,7 @@ function nextCard(border, change){
           }catch (e) {
             // catches if there was no image
         }
-        const flashcardButton = document.getElementById("flashcardButton");
-        flashcardButton.className = "flashcardButtonFlipped";
+        //make the card flip
         setFlashcard();
     }
 }

@@ -235,13 +235,13 @@ function removeChild(element){
         elementName.removeChild(elementName.firstChild);
     }
 }
-//Give the Title and start button animations
-function changeSize(time){
+//Give the title , backgound, start button animations
+function changeStartSize(time){
     const startText = document.getElementById("startButton");
     if(time == 'on'){
-        startText.style.fontSize = "8vw";
-    }else if(time == 'off'){
         startText.style.fontSize = "6vw";
+    }else if(time == 'off'){
+        startText.style.fontSize = "4vw";
     }
 }
 function changeColor(time){
@@ -253,6 +253,14 @@ function changeColor(time){
         const title = document.getElementById("imageTextAnimate");
         title.className = "imageText";
         title.id = "imageText";
+    }
+}
+function changeBackgound(){
+    const backgound = document.getElementById("totalSegmant");
+    if(backgound.className == "totalSegmentBlue"){
+        backgound.className = "totalSegmentWhite";
+    }else{
+        backgound.className = "totalSegmentBlue";
     }
 }
 

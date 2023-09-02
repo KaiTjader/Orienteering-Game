@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NJROTC Orienteering</title>
 </head>
-<body class="totalSegment" onload="setUp()">
-    <div class="topSegment">
-        <img src="Functions/Orienteering.png" alt="LCHS ROTC Photo" class="orienteeringPhoto">
-        <h1 class="imageText" id="imageText" onmouseover="changeColor('on')" onmouseout="changeColor('off')">LCHS<br>NJROTC<br>Orienteering</h1>
+<body id="totalSegmant" class="totalSegmentWhite" onload="setUp()">
+    <div class="topSegment" id="topSegment">
+        <img src="Functions/Orienteering.jpg" alt="LCHS ROTC Photo" class="orienteeringPhoto">
+        <h1 class="imageText" id="imageText" onclick="changeBackgound()" onmouseover="changeColor('on')" onmouseout="changeColor('off')">LCHS<br>NJROTC<br>Orienteering</h1>
         <img class="LCHSLogo" src="Functions/LCHSLogo.png" alt="LCHS Logo">
         <img class="ROTCLogo" src="Functions/ROTCLogo.png" alt="NJROTC Logo">
     </div>
@@ -30,7 +30,7 @@
                 </select>
             </div>
         </div>
-        <button type="reset" class="startButton" id="startButton" onmouseover="changeSize('on')" onmouseout="changeSize('off')"onclick="startTimer()">Start</button>
+        <button type="reset" class="startButton" id="startButton" onmouseover="changeStartSize('on')" onmouseout="changeStartSize('off')"onclick="startTimer()">Start</button>
         <div class="scoreAndClock">
             <p class="clock" id="clock">0:00.00</p>
             <p class="score" id="score">0%</p>
@@ -38,7 +38,7 @@
     </div>
     <div>
         <div id="leftSide" class="bottomSegment">
-            <p id="Instructions">Click Start To Begin</p>
+            <p id="Instructions">Click "Start" To Begin</p>
             <! -- imageButtons goes here -- > 
         </div>
 
