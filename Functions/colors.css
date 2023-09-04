@@ -4,6 +4,9 @@
     --globalOrange: rgb(255, 170, 40);
 }
 
+html {
+    scroll-behavior: smooth;
+}
 .topSegment {
     text-align: center;
     border: solid var(--globalOrange);
@@ -101,13 +104,13 @@
     color:var(--globalBlue);
     background-color: var(--globalWhite);
     font-family: 'Lato';
-    font-size: 22px;
+    font-size: 20px;
 }
 .startButton {
     background-color: var(--globalOrange);
     font-family: Georgia, serif;
     color: var(--globalBlue);
-    font-size: 4vw;
+    font-size: 4.5vw;
     transition-duration: .5s;
 }
 .clock {
@@ -171,6 +174,18 @@
     color: var(--globalBlue);
     font-family: Georgia, serif;
 }
+.flashcardButtonNext {
+    background-color: var(--globalWhite);
+    border: ridge 3px var(--globalOrange);
+    color: var(--globalBlue);
+    font-family: Georgia, serif;
+}
+.flashcardButtonNext2 {
+    background-color: var(--globalWhite);
+    border: ridge 3px var(--globalOrange);
+    color: var(--globalBlue);
+    font-family: Georgia, serif;
+}
 .h2Flashcard {
     color: var(--globalBlue);
     font-family: Georgia, serif;
@@ -181,7 +196,7 @@
     height: 100%;
     background-color: var(--globalWhite);
     border: .5px solid var(--globalBlue);
-    transition-duration: 1s;
+    transition-duration: .5s;
 }
 .arrow {
     border: solid var(--globalBlue);
@@ -189,6 +204,7 @@
     border-width: 0 7.5px 7.5px 0;
     display: inline-block;
     padding: 10px;
+    transition-duration: .5s;
   }
 .right {
 transform: rotate(-45deg);
@@ -209,13 +225,6 @@ transform: rotate(135deg);
     grid-template-columns: 1fr 1fr;
     margin-bottom: 10px;
     width: 51%;
-    transition: all 20s;
-    opacity: 1;
-    filter: blur(0);
-}
-.scroll {
-    opacity: 0;
-    filter: blur(5px);
 }
 .termText {
     font-weight: bold;

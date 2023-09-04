@@ -18,6 +18,7 @@ function ModeDropdownStart(){
         removeFlashcardSetup();
         makeButtonDropDown();
         makePreSetup();
+        setBestScore();
     }
 }
 function makeButtonDropDown(){
@@ -93,12 +94,13 @@ Combine actions to make the game run
 function setUp(){
     //localStorage.setItem("setBestTimes", "temp"); //restart all saved data
     if(localStorage.getItem("setBestTimes") != "The times are set"){
-        localStorage.setItem("setBestTimes", "The times are set");
         localStorage.setItem("1", "99:99.99");
         localStorage.setItem("5", "99:99.99");
         localStorage.setItem("15", "99:99.99");
         localStorage.setItem("30", "99:99.99");
         localStorage.setItem("44", "99:99.99");
+        localStorage.setItem("setBestTimes", "The times are set");
+        localStorage.setItem("background", "totalSegmentWhite");
         beginningDisplay = document.getElementById("beginningScore");
         p = makeP(beginningDisplay);
         p.textContent = "Good Luck & I Hope You Enjoy";
@@ -106,6 +108,7 @@ function setUp(){
     }else{
         makeScoreBoard();
     }
+    setBackground();
 }
 function makeScoreBoard(){
     let rightSide = document.getElementById("rightSide");
@@ -274,12 +277,29 @@ function changeColor(time){
 function changeBackgound(){
     const backgound = document.getElementById("totalSegmant");
     const topPic = document.getElementById("orienteeringPhoto");
-    if(backgound.className == "totalSegmentBlue"){
+    let currentBackgroundColor = localStorage.getItem("background");
+    if(currentBackgroundColor == "totalSegmentBlue"){
         backgound.className = "totalSegmentWhite";
+        localStorage.setItem("background", "totalSegmentWhite");
         topPic.style.opacity = 0.8;
     }else{
         backgound.className = "totalSegmentBlue";
-        topPic.style.opacity = 0.7;
+        localStorage.setItem("background", "totalSegmentBlue");
+        topPic.style.opacity = 0.6;
+    }
+}
+function setBackground(){
+    const backgound = document.getElementById("totalSegmant");
+    const topPic = document.getElementById("orienteeringPhoto");
+    let currentBackgroundColor = localStorage.getItem("background");
+    if(currentBackgroundColor == "totalSegmentWhite"){
+        backgound.className = "totalSegmentWhite";
+        localStorage.setItem("background", "totalSegmentWhite");
+        topPic.style.opacity = 0.8;
+    }else{
+        backgound.className = "totalSegmentBlue";
+        localStorage.setItem("background", "totalSegmentBlue");
+        topPic.style.opacity = 0.6;
     }
 }
 
@@ -409,7 +429,7 @@ let oldTime;
 function setBestScore(){
     const numOfButtonDisplay = document.getElementById("numOfButtonDisplay");
     if(buttonNum != 1){
-        numOfButtonDisplay.textContent = buttonNum + " Buttons:";
+        numOfButtonDisplay.textContent = buttonNum + " Buttons: ";
     }else{
         numOfButtonDisplay.textContent = "1 Button:";
     }

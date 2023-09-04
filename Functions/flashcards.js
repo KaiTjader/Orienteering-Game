@@ -83,39 +83,35 @@ function makeArrowButtons(){
     forwardButton.appendChild(i2);
     dynamicDiv.appendChild(backButton);
     dynamicDiv.appendChild(forwardButton);
-    /*backButton.onmouseover = function changeArrowRightSize() {
-        i1.style.borderWidth = "0 10px 10px 0";
-        i1.style.padding = "10px";
+    backButton.onmouseover = function changeArrowRightSize() {
+        backButton.style.backgroundColor = "rgb(169,169,169)";
+        i1.style.backgroundColor = "rgb(169,169,169)";
     };
     backButton.onmouseout = function changeArrowRightSize() {
-        i1.style.borderWidth = "0 7.5px 7.5px 0";
-        i1.style.padding = "10px";
+        backButton.style.backgroundColor = "white";
+        i1.style.backgroundColor = "white";
     };
     forwardButton.onmouseover = function changeArrowRightSize() {
-        const startText = document.getElementById("right");
-        startText.style.borderWidth = "0 10px 10px 0";
-        i2.style.padding = "10px";
+        forwardButton.style.backgroundColor = "rgb(169,169,169)";
+        i2.style.backgroundColor = "rgb(169,169,169)";
     };
     forwardButton.onmouseout = function changeArrowRightSize() {
-        const startText = document.getElementById("right");
-        startText.style.borderWidth = "0 7.5px 7.5px 0";
-        i2.style.padding = "10px";
-    };*/
+        forwardButton.style.backgroundColor = "white";
+        i2.style.backgroundColor = "white";
+    };
 }
 async function nextCard(border, change){
     if(index != border){
         index += change;
         isImage = true;
-        notSleep = true;
         try {
             const image = document.getElementById("imageFlashcard");
             image.remove();
           }catch (e) {
             // catches if there was no image
         }
-        flashcardButton.className = "flashcardButtonNext";
-        await sleep(1000);
-        flashcardButton.className = "flashcardButtonNext2";
+        flashcardButton.className = "flashcardButtonFlipped";
+        notSleep = false;
         setFlashcard();
     }
 }
@@ -194,18 +190,6 @@ function setPercentage(){
     const scoreText = document.getElementById("score");
     scoreText.textContent = index+1 + "/44";
 }
-
-// Make jelly score for terms:
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        console.log(entry);
-        if(entry.isIntersecting) {
-            entry.target.classList.add('scroll');
-        }else{
-            entry.target.classList.remove('scroll');
-        }
-    });
-});
 
 const hiddenElements = document.querySelectorAll('term');
 hiddenElements.forEach((el) => observer.observe(el));
