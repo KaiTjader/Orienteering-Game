@@ -92,7 +92,7 @@ function removeFlashcardSetup(){
 Combine actions to make the game run
 */
 function setUp(){
-    localStorage.setItem("setBestTimes", "temp"); //restart all saved data
+    //localStorage.setItem("setBestTimes", "temp"); //restart all saved data
     if(localStorage.getItem("setBestTimes") != "The times are set"){
         localStorage.setItem("1", "99:99.99");
         localStorage.setItem("5", "99:99.99");
@@ -101,11 +101,9 @@ function setUp(){
         localStorage.setItem("44", "99:99.99");
         localStorage.setItem("setBestTimes", "The times are set");
         localStorage.setItem("background", "totalSegmentWhite");
-        const beginningDisplay = document.getElementById("rightSide");
-        let p = document.createElement('p');
+        let p = makeP("rightSide");
         p.className = "firstPlay";
         p.id = "firstPlay";
-        beginningDisplay.appendChild(p);
         p.textContent = "Good Luck & I Hope You Enjoy";
         console.log("Rest Local Storage");
     }else{
