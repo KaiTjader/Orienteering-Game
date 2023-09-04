@@ -122,6 +122,11 @@ html {
     font-family: 'Lato';
     font-size: 22px;
 }
+.firstPlay {
+    font-family: Georgia, serif;
+    color: var(--globalBlue);
+    font-size: 17px;
+}
 .Instructions {
     font-family: Georgia, serif;
     color: var(--globalBlue);
