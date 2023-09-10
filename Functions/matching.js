@@ -101,7 +101,8 @@ function setUp(){
         localStorage.setItem("44", "99:99.99");
         localStorage.setItem("setBestTimes", "The times are set");
         localStorage.setItem("background", "totalSegmentWhite");
-        let p = makeP("rightSide");
+        const rightSide = document.getElementById("rightSide");
+        let p = makeP(rightSide);
         p.className = "firstPlay";
         p.id = "firstPlay";
         p.textContent = "Good Luck & I Hope You Enjoy";
