@@ -13,6 +13,13 @@
 5. Once every button is green, your best time will be saved
 6. Have fun messing around with the game and I hope you learn
 
+1. Click on the game mode dropdown and select 'flashcards'
+2. Click on the flashcard to flip it over
+3. Use the arrow buttons go to the next or prevouse slide
+4. Press the 'Start' button and time yourself
+5. Scroll down to see the matching pairs
+6. Click on the game mode dropdown and select 'Matching'
+
 ## How to access it
 ---
 - Look up 'www.orienteeringgame.com'
