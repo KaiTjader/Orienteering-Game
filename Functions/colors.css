@@ -94,7 +94,7 @@ html {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -60%);
-    font-size: 75px;
+    font-size: 9vw;
 }
 @keyframes flick {
     0% {
@@ -102,6 +102,11 @@ html {
     }
     100% {
     background-position: top right;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .imageTextAnimate {
+      font-size: 80px;
     }
 }
 .ButtonDropdown {
