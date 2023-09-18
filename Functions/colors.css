@@ -72,9 +72,14 @@ html {
 .imageText {
     font: "Roboto", Arial, sans-serif;
     color: var(--globalWhite);
-    font-size: 75px;
+    font-size: 9vw;
     transition-duration: 1s;
     text-align: center;
+}
+@media screen and (min-width: 1000px) {
+    .imageText {
+      font-size: 80px;
+    }
 }
 .imageTextAnimate {
     text-align: center;
@@ -153,13 +158,26 @@ html {
     color: var(--globalBlue);
     font-family: Georgia, serif;
 }
+.numberOfButtons {
+    color:var(--globalBlue);
+    background-color: var(--globalWhite);
+    font-family: 'Lato';
+}
+@media screen and (max-width: 500px) {
+    .numberOfButtons {
+      font-size: 15px;
+    }
+}
 .ModeDropdownContainer {
     background-color: var(--globalWhite);
     border-right: .5px solid var(--globalBlue);
 }
 .ModeDropdown{
-    background-color: var(--globalWhite);
     border: 0px;
+    color:var(--globalBlue);
+    background-color: var(--globalWhite);
+    font-family: 'Lato';
+    font-size: 16px;
     font-family: Georgia, serif;
 }
 .BestDiv {
